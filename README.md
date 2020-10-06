@@ -57,12 +57,11 @@ Run the project
 
 ```javascript
 DEV MODE
-yarn start
+npm start
 
 ...............................
 PRODUCTION MODE
-yarn build
-yarn start
+npm start
 ```
 
 ## DEV Notes
