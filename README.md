@@ -35,6 +35,7 @@ Created to learn about, how to create a project in FireStore using ReactJS.
 We work with the next technologies and apps in this App.
 * [ReactJS](https://reactjs.org/docs/getting-started.html)
 * [FireStore](https://firebase.google.com/docs/firestore)
+* [MaterializeCSS](https://materializecss.com/getting-started.html)
 
 ## Getting Started
 Clone the repo, then get run the commands.
@@ -50,7 +51,7 @@ git clone {thisRepoUrl}
 Install the dependencies.
 
 ```javascript
-yarn install
+npm i
 ```
 
 Run the project
@@ -61,7 +62,8 @@ npm start
 
 ...............................
 PRODUCTION MODE
-npm start
+npm run build
+npm run start
 ```
 
 ## DEV Notes

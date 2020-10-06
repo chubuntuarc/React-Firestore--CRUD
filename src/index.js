@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './firebase'; //Firebase imports
+import 'materialize-css/dist/css/materialize.min.css'; //MaterializeCSS import
+import 'materialize-css/dist/js/materialize.min'; //MaterializeCSS JS import
 
 ReactDOM.render(
   <React.StrictMode>
