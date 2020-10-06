@@ -11,13 +11,17 @@ const Projects = () => {
 
     //Function to save project data.
     const addOrEditProject = async projectData => {
-        if (currentId === ''){
-            await db.collection('projects').doc().set(projectData);
-            M.toast({ html: 'Project created', classes: 'rounded' })
-        } else {
-            await db.collection('projects').doc(currentId).update(projectData);
-            M.toast({ html: 'Project updated', classes: 'rounded' })
-            setCurrentId('');
+        try{
+            if (currentId === '') {
+                await db.collection('projects').doc().set(projectData);
+                M.toast({ html: 'Project created', classes: 'rounded' })
+            } else {
+                await db.collection('projects').doc(currentId).update(projectData);
+                M.toast({ html: 'Project updated', classes: 'rounded' })
+                setCurrentId('');
+            }
+        } catch (error) {
+            //
         }
     }
 
