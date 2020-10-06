@@ -1,4 +1,6 @@
-import React, {useState} from "react";
+import React, { useState, useEffect} from "react";
+import { db } from "../firebase";
+import M from 'materialize-css';
 
 const ProjectForm = props => {
 
@@ -27,6 +29,21 @@ const ProjectForm = props => {
         //Set the initial state
         setValues({...initialStateValues});
     }
+
+    //Get project by id
+    const getProjectById = async id => {
+        const project = await db.collection('projects').doc(id).get();
+        setValues({...project.data()});
+        M.updateTextFields();
+    }
+
+    useEffect(() => {
+        if (props.currentId === ''){
+            setValues({...initialStateValues});
+        } else {
+            getProjectById(props.currentId);
+        }
+    }, [props.currentId]);
 
     return (
         <div className="col s12">
@@ -57,7 +74,8 @@ const ProjectForm = props => {
                                 </div>
                             </div>
                             <div className="row">
-                                <button className="btn waves-effect waves-light right col s4" type="submit">Submit
+                                <button className="btn waves-effect waves-light right col s4" type="submit">
+                                    {props.currentId === '' ? 'Save' : 'Update'}
                                     <i className="material-icons right">send</i>
                                 </button>
                             </div> 
