@@ -15,7 +15,7 @@
     ·
     <a href="https://github.com/chubuntuarc/React-Firestore--CRUD/issues">Request Feature</a>
     .
-    <a href="https://simple-crud-320ca.web.app/">DEMOP</a>
+    <a href="https://simple-crud-320ca.web.app/">DEMO</a>
   </p>
 </p>
 
